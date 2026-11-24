@@ -1,4 +1,4 @@
-<!-- phil-dev source-sha256=d3b5efe9cdbfc3d1647caf5f598062f12102829d9497b964a85da5f6931987c1 -->
+<!-- phil-dev source-sha256=8ec9ab063ce0de7098e30877716d3448608dfe160f88b77075a15e345538d9a5 -->
 # Référence
 
 ## Domaine
@@ -51,12 +51,13 @@
 | `Http\CentreController`, `Http\CentreRequest`, `Http\Routes` | Les points de terminaison du centre et leur vérification CSRF |
 | `Twig\CentreView`, `BellComponent`, `ListComponent`, `ToastsComponent`, `WebPushComponent` | Les composants |
 | `Http\PushSubscriptionController` | Les points de terminaison de Web Push |
+| `Http\DigestLinks`, `Http\DigestUnsubscribeController` | Les liens d'un résumé, et le point de terminaison de son lien signé qui l'arrête |
 | `WebPush\MinishlinkWebPushSender`, `WebPush\VapidKeys` | L'expéditeur Web Push du bundle sur minishlink/web-push, et les clés VAPID dont il signe |
 | `Mailer\MailerDigestSender` | Le résumé par les transports de Symfony Mailer |
 | `Idempotency\NotificationDedupe` | Le `DeliveryDedupe` sur phil/idempotency : une seule livraison de la même notification par fenêtre |
 | `CircuitBreaker\ChannelBreakers` | Le `ChannelCircuits` sur phil/circuit-breaker : les circuits `notifications.<channel>[.<transport>]` |
 | `Mailer\MailerChannelSender` | Le canal `email` du mode `first_success`, par les transports de Symfony Mailer |
-| `Notifier\NotifierChannelSender` | Les canaux `sms`, `push` et `chat` du mode `first_success`, par le texter et le chatter de Notifier |
+| `Notifier\NotifierChannelSender` | Les canaux `sms`, `push` et `chat` du mode `first_success`, par les transports du texter et du chatter de Notifier |
 | `Scheduler\NotificationSchedule` | Le calendrier `phil_notifications` |
 | `Console\PurgeCommand` | `phil:notifications:purge` |
 | `Console\VapidKeysCommand` | `phil:notifications:vapid-keys` |
@@ -82,5 +83,5 @@ l'alias `PushSubscriptions` sont publics.
 | `assets/src/web_push_controller.js`, `assets/src/lib/push.js` | Le contrôleur Web Push, et ce qu'il lit du navigateur |
 | `assets/worker/push-worker.js` | Le *service worker* qui affiche les messages |
 | `assets/styles/notifications.css` | La feuille de style, sur les jetons de PHIL UX |
-| `config/routes.php`, `config/remote_routes.php`, `config/push_routes.php` | Les routes |
+| `config/routes.php`, `config/remote_routes.php`, `config/push_routes.php`, `config/digest_routes.php` | Les routes |
 | `templates/`, `translations/` | Les gabarits, et les libellés en anglais et en français |
