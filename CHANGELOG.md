@@ -4,6 +4,19 @@ All notable changes to `phil/notifications-bundle` will be documented in this fi
 
 Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+## 0.4.1-alpha - 2026-11-25
+
+### Changed
+
+- The development requirements take `twig/twig` 3.31.1 or later, which fixes the advisories of its sandbox published on
+  2026-11-24.
+
+### Fixed
+
+- The compiler pass that removes Messenger handlers runs before the one of
+  `symfony/messenger`, which Symfony 8.2.0-RC1 registers in its own bundle at the default priority: the container no
+  longer fails to build with a handler locator that names a removed service.
+
 ## 0.4.0-alpha - 2026-11-24
 
 Each digest carries a signed link that stops it, whose route the application imports,
